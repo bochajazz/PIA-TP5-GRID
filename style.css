@@ -1,0 +1,231 @@
+/* Grid para toda la página */
+:root {
+    --box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* asigna un valor específico y luego se agrega var(--box shadow) en la propiedad box-shadow del elemento en el que se desee implementar. */
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+}
+
+header {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    background-color: #fff;
+}
+
+
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr auto; /* El título ocupa el espacio restante, los íconos ocupan el espacio necesario */
+    width: 100%;
+    padding: 10px 15px;
+    background-color: rgb(11, 32, 48);
+    border-radius: 0 0 5px 5px;
+    box-shadow: var(--box-shadow);
+}
+
+.navbar h1 {
+    font-size: 24px;
+    justify-self: start; /* Asegura que el título esté alineado a la izquierda */
+}
+
+.social-icons {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    justify-self: end; /*Alinea los íconos a la derecha */
+}
+
+.social-icons a {
+    color: #f4f4f9;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #007acc; 
+}
+
+.profile-img {
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.header-content h2 {
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.header-content p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Sección acerca de mí */
+.acercaDeMi {
+    display: grid;
+    grid-template-columns: 1fr; /* Asegura una sola columna */
+    justify-items: center; /* Centra los elementos dentro de la grid */
+    padding: 40px 20px;
+    background-color: rgb(254, 248, 240);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.acercaDeMi h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.acercaDeMi p {
+    font-size: 16px;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Sección Proyectos */
+.proyectos {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    box-shadow: var(--box-shadow);
+}
+
+.proyectos h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.proyecto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* auto-fit rellena el ancho con el tamaño asignado */
+    gap: 20px;
+}
+
+.proyecto-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.proyecto-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.proyecto-item h3 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.proyecto-item p {
+    font-size: 16px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.proyecto-item a {
+    text-decoration: none;
+    color: #0073e6;
+    font-weight: bold;
+}
+
+.proyecto-item a:hover {
+    color: #005bb5;
+}
+
+/* Sección Contacto */
+.contacto {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna */
+    justify-items: center; /* Centra los elementos */
+    padding: 40px 20px;
+    background-color:rgb(254, 248, 240);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.contacto p {
+    font-size: 16px;
+    color: #555;
+}
+
+.contacto a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.contacto a:hover {
+    color: #005bb5;
+}
+
+/* Pie de página */
+footer {
+    background-color:rgb(11, 32, 48);
+    color: #fff;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+    border-radius: 5px 5px 0 0;
+}
+
+/* Media Queries */
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+    .proyectos {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas para tablets */
+    }
+}
+
+/* Pantallas pequeñas (smartphones) */
+@media (max-width: 600px) {
+    
+    .proyectos {
+        grid-template-columns: 1fr;
+    }
+
+    .proyectos h2, .contacto h2, .acercaDeMi h2, .header-content h2 {
+        font-size: 20px;
+    }
+    
+    .social-icons a {
+        font-size: 20px;
+    }
+
+    .header-content p {
+        font-size: 14px;
+    }
+
+    .proyecto-item h3 {
+        font-size: 16px;
+    }
+
+    .proyecto-item p {
+        font-size: 12px;
+    }
+    
+    .contacto p {
+        font-size: 16px;
+    }
+}
